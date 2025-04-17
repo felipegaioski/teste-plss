@@ -21,8 +21,8 @@ Aplicação desenvolvida para o teste prático da empresa Plss Soluções.
 
 - Clone o projeto. Caso use o Laragon, recomenda-se clonar o projeto na pasta www.
 - Execute o comando "composer i" ou "composer u" na pasta do projeto.
-- Carregue e execute o arquivo "plss_db.sql" no seu gerenciador de bancos de dados para criar o banco de dados padrão da aplicação.
-- Faça uma cópia do arquivo .env.example e renomeie-o para .env. No item "DB_DATABASE" insira o nome que deu ao banco de dados ao criá-lo.
+- Carregue e execute o arquivo "plss_db.sql" (localizado na pasta raiz) no seu gerenciador de bancos de dados para criar o banco de dados padrão da aplicação.
+- Faça uma cópia do arquivo ".env.example" e renomeie-o para ".env". No item "DB_DATABASE" insira o nome que deu ao banco de dados ao criá-lo.
 - Execute o comando "php artisan key:generate"
 - Caso esteja usando o Laragon, ligue-o. Caso contrário, execute o comando "php artisan serve" para iniciar o projeto.
 
@@ -32,10 +32,13 @@ Aplicação desenvolvida para o teste prático da empresa Plss Soluções.
 
 ## Informações
 
-- Este sistema tem como objetivo principal criar e gerenciar (gerenciar envolve criar, editar, deletar) chamados.
+- Este sistema tem como objetivo principal gerenciar (gerenciar envolve criar, editar, deletar) chamados.
 - O sistema também possibilita criar e gerenciar usuários, níveis de acesso, permissões e módulos. O Administrador possui por padrão o direito de visualizar e gerenciar usuários e níveis de acesso.
-- Apenas ao usuário de nível Administrador é permitido alterar a situação do chamado, iniciando e finalizando.
+- Apenas ao usuário de nível Administrador é permitido alterar a situação do chamado: ao Iniciar, a situação é passada para "Pendente". Ao finalizar, a situação é passada para "Resolvido". Outros usuários (com permissões em chamados) poderão criar, editar e visualizar os chamados, mas não resolvê-los.
+- A tela inicial apresenta uma Dashboard com algumas métricas referentes aos chamados. Na primeira seção é possível filtrar por mês e ano. Na seção inferior estão métricas totais.
+- A tela de chamados apresenta a listagem de todos os chamados registrados, ordenados pela data limite. É possível filtrar por situação.
 - O Administrador pode criar novos níveis de acesso e gerenciar as permissões "Visualizar" e "Gerenciar" de cada um deles (Não é permitido, no entanto, que retire suas próprias permissões).
 - Há uma página 404 quando uma rota não é encontrada.
 - O acesso a cada página ou rota é verificado de acordo com as permissões concedidas a cada nível de acesso. Mesmo quando não há um link visível para a página ou rota, ela estará protegida contra acessos não autorizados.
 - As validações retornam toasts para melhor experiência do usuário.
+- O arquivo "modelagem.png" (localizado na pasta raiz) mostra o diagrama entidade-relacionamento do banco de dados do sistema.

@@ -10,9 +10,14 @@
         <div class="title-container">
             <h1 class="title m-0">Níveis de acesso</h1>
         </div>
-        <div class="icon-container">
-            <a href="{{ url('/niveis-de-acesso/novo') }}"><i class="fa-solid fa-plus"></i></a>
-            {{-- <i class="fa-solid fa-filter"></i> --}}
-        </div>
+        <a href="{{ url('/niveis-de-acesso/novo') }}">
+            <button class="btn btn-primary">
+                Novo
+                {{-- <div class="icon-container">
+                            <i class="fa-solid fa-plus fa-sm"></i> --}}
+                    {{-- <i class="fa-solid fa-filter"></i> --}}
+                {{-- </div> --}}
+            </button>
+        </a>
     </div>
 </header>

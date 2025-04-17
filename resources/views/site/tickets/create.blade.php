@@ -4,7 +4,7 @@
     <main>
         <div class="main-container">
             <div>
-                @include('site.users.header')
+                @include('site.tickets.header')
             </div>
             <div class="inner-container">
                 <div class="form-container">
